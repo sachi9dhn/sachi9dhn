@@ -1,0 +1,17 @@
+sudo dnf -y update --skip-broken
+sudo /usr/bin/wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm -P /tmp/
+sudo /usr/bin/chmod 777 /tmp/google-chrome-stable_current_x86_64.rpm
+sudo dnf -y localinstall /tmp/google-chrome-stable_current_x86_64.rpm
+
+# Desktop GUI exposure -
+sudo dnf -y update --skip-broken
+sudo dnf -y install tigervnc-server tigervnc-server-module
+sudo yum -y install gnome-tweak-tool
+
+# Create directories -
+sudo /usr/bin/mkdir /tta
+sudo /usr/bin/mkdir /tta/auto
+sudo /usr/bin/mkdir /tta/auto/config
+sudo /usr/bin/mkdir /tta/auto/starts
+sudo /usr/bin/mkdir /tta/config/browser_drivers
+sudo /usr/bin/chmod -R 777 /tta
