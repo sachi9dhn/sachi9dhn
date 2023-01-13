@@ -15,3 +15,10 @@ sudo /usr/bin/mkdir /tta/auto/config
 sudo /usr/bin/mkdir /tta/auto/starts
 sudo /usr/bin/mkdir /tta/config/browser_drivers
 sudo /usr/bin/chmod -R 777 /tta
+# Gnome desktop internals -
+sudo dnf -y update --skip-broken
+sudo dnf -y groupinstall workstation
+sudo dnf -y groupinstall "Server with GUI"
+sudo systemctl isolate graphical
+sudo systemctl set-default graphical.target
+sudo setenforce 0
